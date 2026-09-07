@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Live Stream Server | ErikopterStudios</title>
+    <style>
+        body {
+            background-color: #0d1117;
+            color: #c9d1d9;
+            font-family: 'Segoe UI', sans-serif;
+            text-align: center;
+            padding: 40px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 { color: #58a6ff; font-size: 2.5em; }
+        
+        /* 📺 PANTALLA EN DIRECTO SIMULADA */
+        .stream-box {
+            background-color: #000;
+            border: 3px solid #30363d;
+            border-radius: 12px;
+            padding: 10px;
+            margin: 30px auto;
+            position: relative;
+            max-width: 640px;
+            box-shadow: 0 0 20px rgba(218, 54, 51, 0.4);
+        }
+        .live-badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #da3633;
+            color: white;
+            padding: 5px 10px;
+            font-weight: bold;
+            border-radius: 5px;
+            font-size: 0.8em;
+            animation: parpadeo 1.5s infinite;
+        }
+        .screen-simulation {
+            background-color: #1a1a1a;
+            height: 360px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-family: monospace;
+            color: #00ff00;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .console-log {
+            text-align: left;
+            width: 100%;
+            height: 120px;
+            background: #000;
+            padding: 10px;
+            border-radius: 5px;
+            overflow: hidden;
+            font-size: 0.9em;
+            margin-top: 15px;
+            border: 1px solid #333;
+        }
+        
+        @keyframes parpadeo {
+            0% { opacity: 1; }
+            50% { opacity: 0.4; }
+            100% { opacity: 1; }
+        }
+        .back { display: inline-block; margin-top: 30px; color: #58a6ff; text-decoration: none; }
+        .back:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>📺 MONITORIZACIÓN EN DIRECTO</h1>
+        <p>Streaming en tiempo real desde el servidor PaperMC de ErikopterStudios.</p>
+
+        <div class="stream-box">
+            <div class="live-badge">🔴 EN DIRECTO</div>
+            <div class="screen-simulation">
+                <div style="font-size: 3em; margin-bottom: 10px;">🪓🤖</div>
+                <div style="font-weight: bold; color: #fff; letter-spacing: 1px;">CAM_SPAWN_POINT</div>
+                <p id="stream-action" style="color: #ffb703; font-size: 1.1em;">Antwan está patrullando el Spawn con el hacha irrompible...</p>
+                
+                <!-- Consola del directo -->
+                <div class="console-log">
+                    <div style="color: #8b949e; border-bottom: 1px solid #222; padding-bottom: 3px; margin-bottom: 5px;">[Logs de Aternos]</div>
+                    <div id="log-linea1">> [INFO] Servidor corriendo de forma estable...</div>
+                    <div id="log-linea2">> [ANTWAN] Escaneando entorno en busca de intrusos.</div>
+                </div>
+            </div>
+        </div>
+
+        <center><a href="../" class="back">← Volver a la portada principal</a></center>
+    </div>
+
+    <!-- Script dinámico que actualiza las acciones solas en la tablet -->
+    <script>
+        const accionesStream = [
+            "Antwan ha detectado 2 bloques de servidor... ¡BUMMM! Destruidos. 🪓",
+            "Antwan está patrullando el Spawn con el hacha irrompible...",
+            "El bot ha enviado los estados de red por USB con pc datasend.",
+            "Antwan dice por el chat: ¡Si no es una secuela, lo destruyo! 💥",
+            "Escaneando el Spawn. Código del mapa verificado."
+        ];
+
+        const logsConsola = [
+            "> [ANTWAN] ¡¿Dos bloques de servidor?! ¡Saco el hacha! 🪓",
+            "> [SERVER] ¡¡¡BUMMM!!! Dos bloques del sistema obliterados. 💥💥",
+            "> [INFO] Copia de seguridad en la nube completada con éxito.",
+            "> [ANTWAN] Éxito total. Activando pase de batalla VIP.",
+            "> [SERIAL] Datos de infraestructura enviados al PC correctamente."
+        ];
+
+        setInterval(() => {
+            const randomAccion = accionesStream[Math.floor(Math.random() * accionesStream.length)];
+            const randomLog1 = logsConsola[Math.floor(Math.random() * logsConsola.length)];
+            const randomLog2 = logsConsola[Math.floor(Math.random() * logsConsola.length)];
+            
+            document.getElementById("stream-action").innerText = randomAccion;
+            document.getElementById("log-linea1").innerText = randomLog1;
+            document.getElementById("log-linea2").innerText = randomLog2;
+        }, 4000);
+    </script>
+
+</body>
+</html>
