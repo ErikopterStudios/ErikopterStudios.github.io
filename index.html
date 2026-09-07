@@ -24,6 +24,38 @@
             text-transform: uppercase;
             letter-spacing: 1px;
         }
+        
+        /* 🕹️ PANEL DE BOTONES PRINCIPALES */
+        .panel-control {
+            margin-bottom: 40px;
+        }
+        .btn-interact {
+            background-color: #21262d;
+            border: 1px solid #30363d;
+            color: #c9d1d9;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin: 5px;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+        .btn-interact:hover {
+            transform: scale(1.05);
+            background-color: #30363d;
+        }
+        .btn-live {
+            border-color: #da3633;
+            color: #da3633;
+            animation: parpadeo-boton 2s infinite;
+        }
+        .btn-live:hover {
+            background-color: #da3633;
+            color: white;
+        }
+
         .container {
             max-width: 1000px;
             margin: 0 auto;
@@ -74,6 +106,12 @@
             color: #58a6ff;
             text-decoration: none;
         }
+
+        @keyframes parpadeo-boton {
+            0% { box-shadow: 0 0 0px rgba(218, 54, 51, 0); }
+            50% { box-shadow: 0 0 10px rgba(218, 54, 51, 0.5); }
+            100% { box-shadow: 0 0 0px rgba(218, 54, 51, 0); }
+        }
     </style>
 </head>
 <body>
@@ -81,8 +119,14 @@
     <h1>ERIKOPTERSTUDIOS 🪓🤖</h1>
     <div class="subtitle">🐾 LABORATORIO DE SOFTWARE Y ROBÓTICA GATUNA 🐾</div>
 
+    <!-- 🕹️ PANEL DE CONTROL CON TU NUEVO BOTÓN DE TRANSMISIÓN -->
+    <div class="panel-control">
+        <a href="logros" class="btn-interact btn-live">🔴 TRANSMISIÓN EN DIRECTO (LIVE STREAM)</a>
+        <a href="logros" class="btn-interact" style="border-color: #ffb703; color: #ffb703;">📿 VER LOGROS MAKER</a>
+    </div>
+
     <div class="container">
-        <!-- LINK A LA APP -->
+        <!-- TARJETA 1 -->
         <a href="milkilang" class="card">
             <div>
                 <span class="badge">v1.0.0 Stable</span>
@@ -91,7 +135,7 @@
             </div>
         </a>
 
-        <!-- LINK A LA TORRETA -->
+        <!-- TARJETA 2 -->
         <a href="torreta-laser" class="card">
             <div>
                 <span class="badge badge-hardware">Hardware Pico</span>
@@ -100,7 +144,7 @@
             </div>
         </a>
 
-        <!-- LINK A ANTWAN -->
+        <!-- TARJETA 3 -->
         <a href="antwan-mod" class="card">
             <div>
                 <span class="badge">Plugin JAR</span>
