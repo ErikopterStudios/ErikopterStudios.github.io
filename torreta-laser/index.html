@@ -1,64 +1,64 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Torreta Láser | ErikopterStudios</title>
-    <style>
-        body { 
-            background-color: #0d1117; 
-            color: #c9d1d9; 
-            font-family: 'Segoe UI', sans-serif; 
-            padding: 40px; 
-            text-align: center; 
-        }
-        .box { 
-            background: #161b22; 
-            border: 1px solid #30363d; 
-            padding: 30px; 
-            max-width: 700px; 
-            margin: 0 auto; 
-            border-radius: 10px; 
-            text-align: left; 
-        }
-        h1 { color: #58a6ff; text-align: center; }
-        h3 { color: #79c0ff; border-bottom: 1px solid #30363d; padding-bottom: 5px; margin-top: 25px; }
-        pre { background: #000; color: #ffb703; padding: 15px; border-radius: 5px; overflow-x: auto; font-family: monospace; }
-        .steps { padding-left: 20px; }
-        .steps li { margin-bottom: 15px; }
-        .back { display: inline-block; margin-top: 20px; color: #58a6ff; text-decoration: none; }
-        .back:hover { text-decoration: underline; }
-        strong { color: #ffb703; }
-    </style>
-</head>
-<body>
+/* 🎨 ESTILOS INDEPENDIENTES PARA LA TORRETA LÁSER - BY ERIKOPTERSTUDIOS */
 
-    <div class="box">
-        <h1>🔴 Central Técnica: Torreta Láser</h1>
-        <p><strong>Proyecto:</strong> Sistema físico de patrullaje automatizado mediante hardware para el pasillo de casa.</p>
-        
-        <h3>📦 Componentes de la Mesa de Pruebas:</h3>
-        <ul>
-            <li>1x Placa de desarrollo (Microcontrolador físico)</li>
-            <li>2x Servomotores azules SG90 (Ejes X / Y)</li>
-            <li>1x Diodo Láser Rojo de alta intensidad (5V o 3.3V)</li>
-            <li>1x Placa de madera base + Tornillos pequeños de servo</li>
-            <li>Cables de puente (Macho-Hembra / Macho-Macho)</li>
-        </ul>
+body { 
+    background-color: #0d1117; 
+    color: #c9d1d9; 
+    font-family: 'Segoe UI', sans-serif; 
+    padding: 40px; 
+    text-align: center; 
+}
 
-        <h3>🛠️ Guía de Montaje Paso a Paso:</h3>
-        <ol class="steps">
-            <li><strong>Montaje del Eje X (Horizontal):</strong> Coge el primer servomotor azul SG90. Colócalo en posición vertical sobre la placa de madera base. Asegúralo usando los dos tornillos largos que vienen en su bolsa para que no se mueva al girar. Coloca la cruceta de plástico blanca en el engranaje superior sin atornillarla todavía.</li>
-            <li><strong>Acoplamiento del Eje Y (Vertical):</strong> Coge el segundo servomotor SG90. Con pegamento fuerte o una brida fina, pégalo de lado (en horizontal) sobre la cruceta de plástico del primer servo. De esta forma, cuando el servo de la base gire a los lados, arrastrará al segundo servo, que se encargará de mover el láser de arriba a abajo.</li>
-            <li><strong>Instalación del Láser:</strong> Fija el diodo láser rojo sobre el lateral de giro del segundo servomotor. Asegúrate de que apunte directamente hacia el suelo del pasillo para que Milki pueda ver el punto rojo con facilidad.</li>
-            <li><strong>Conexión Eléctrica de los Servos:</strong> Cada servomotor tiene 3 cables (Marrón, Rojo y Naranja). Junta los dos cables <strong>marrones</strong> y conéctalos al pin <strong>GND</strong> (Tierra) de la placa. Junta los dos cables <strong>rojos</strong> y conéctalos al pin de energía de la placa. Conecta el cable <strong>naranja de señal</strong> del primer servo al Pin de hardware asignado al eje horizontal, y el naranja del segundo servo al Pin del eje vertical.</li>
-            <li><strong>Conexión Eléctrica del Láser:</strong> Conecta el cable negro (o azul) del diodo láser al pin <strong>GND</strong>. Conecta el cable rojo del láser al Pin digital configurado para controlar el encendido y apagado de la corriente.</li>
-        </ol>
+.box { 
+    background: #161b22; 
+    border: 1px solid #30363d; 
+    padding: 30px; 
+    max-width: 700px; 
+    margin: 0 auto; 
+    border-radius: 10px; 
+    text-align: left; 
+}
 
-        <h3>💻 Código de Control Integrado:</h3>
-        <pre>// Aquí pegarás el script nativo de tu PC Lenovo que mueve los servos</pre>
+h1 { color: #58a6ff; text-align: center; }
+h3 { color: #79c0ff; border-bottom: 1px solid #30363d; padding-bottom: 5px; margin-top: 25px; }
 
-        <center><a href="../" class="back">← Volver a la central de ErikopterStudios</a></center>
-    </div>
+pre { 
+    background: #000; 
+    color: #ffb703; 
+    padding: 15px; 
+    border-radius: 5px; 
+    overflow-x: auto; 
+    font-family: monospace; 
+}
 
-</body>
-</html>
+.steps { padding-left: 20px; }
+.steps li { margin-bottom: 15px; }
+
+.back { 
+    display: inline-block; 
+    margin-top: 20px; 
+    color: #58a6ff; 
+    text-decoration: none; 
+}
+
+.back:hover { text-decoration: underline; }
+strong { color: #ffb703; }
+
+/* 📥 BOTÓN DE ACCIÓN INTERACTIVO */
+.btn-action {
+    display: block;
+    background-color: #da3633;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 25px 0;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.2s;
+}
+
+.btn-action:hover {
+    background-color: #f85149;
+}
