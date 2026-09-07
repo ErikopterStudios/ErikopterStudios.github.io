@@ -1,0 +1,64 @@
+/* 🎨 ESTILOS INDEPENDIENTES PARA LA TORRETA LÁSER - BY ERIKOPTERSTUDIOS */
+
+body { 
+    background-color: #0d1117; 
+    color: #c9d1d9; 
+    font-family: 'Segoe UI', sans-serif; 
+    padding: 40px; 
+    text-align: center; 
+}
+
+.box { 
+    background: #161b22; 
+    border: 1px solid #30363d; 
+    padding: 30px; 
+    max-width: 700px; 
+    margin: 0 auto; 
+    border-radius: 10px; 
+    text-align: left; 
+}
+
+h1 { color: #58a6ff; text-align: center; }
+h3 { color: #79c0ff; border-bottom: 1px solid #30363d; padding-bottom: 5px; margin-top: 25px; }
+
+pre { 
+    background: #000; 
+    color: #ffb703; 
+    padding: 15px; 
+    border-radius: 5px; 
+    overflow-x: auto; 
+    font-family: monospace; 
+}
+
+.steps { padding-left: 20px; }
+.steps li { margin-bottom: 15px; }
+
+.back { 
+    display: inline-block; 
+    margin-top: 20px; 
+    color: #58a6ff; 
+    text-decoration: none; 
+}
+
+.back:hover { text-decoration: underline; }
+strong { color: #ffb703; }
+
+/* 📥 BOTÓN DE ACCIÓN INTERACTIVO */
+.btn-action {
+    display: block;
+    background-color: #da3633;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 25px 0;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.2s;
+}
+
+.btn-action:hover {
+    background-color: #f85149;
+}
