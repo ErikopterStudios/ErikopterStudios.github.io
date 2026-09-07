@@ -4,43 +4,89 @@
     <meta charset="UTF-8">
     <title>ErikopterStudios | Central Oficial</title>
     <style>
+        :root {
+            --bg-color: #0d1117;
+            --card-bg: #161b22;
+            --border-color: #30363d;
+            --text-main: #c9d1d9;
+            --text-title: #58a6ff;
+            --accent: #ffb703;
+        }
+        
+        .hacker-mode {
+            --bg-color: #000000;
+            --card-bg: #0a0a0a;
+            --border-color: #00ff00;
+            --text-main: #00ff00;
+            --text-title: #00ff00;
+            --accent: #00ff00;
+        }
+
         body {
-            background-color: #0d1117;
-            color: #c9d1d9;
+            background-color: var(--bg-color);
+            color: var(--text-main);
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             text-align: center;
             padding: 50px;
+            transition: all 0.3s ease;
         }
         h1 {
-            color: #58a6ff;
+            color: var(--text-title);
             font-size: 3em;
             margin-bottom: 10px;
         }
         .subtitle {
-            color: #ffb703;
+            color: var(--accent);
             font-size: 1.4em;
             font-weight: bold;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
+        
+        /* 🕹️ BOTONES INTERACTIVOS DEL PANEL */
+        .btn-interact {
+            background-color: #21262d;
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            margin: 5px;
+            transition: 0.2s;
+        }
+        .btn-interact:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+
         .container {
             max-width: 1000px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr; /* ¡Tres columnas para tus tres inventos! */
+            grid-template-columns: 1fr 1fr 1fr;
             gap: 20px;
         }
+        
+        /* ✨ EFECTO INTERACTIVO EN TARJETAS */
         .card {
-            background-color: #161b22;
-            border: 1px solid #30363d;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
             border-radius: 10px;
             padding: 20px;
             text-align: left;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(88, 166, 255, 0.2);
+        }
+        
         .card h3 {
             color: #79c0ff;
             margin-top: 0;
@@ -56,6 +102,22 @@
         .badge-hardware {
             background-color: #8957e5;
         }
+        
+        /* 🪓 PIE DE PÁGINA Y CONTACTO VIA EMAIL */
+        footer {
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            color: #8b949e;
+            font-size: 0.9em;
+        }
+        footer a {
+            color: #58a6ff;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -63,9 +125,17 @@
     <h1>ERIKOPTERSTUDIOS 🪓🤖</h1>
     <div class="subtitle">🐾 LABORATORIO DE SOFTWARE Y ROBÓTICA GATUNA 🐾</div>
 
+    <!-- 🕹️ PANEL DE CONTROL DE MANDOS INTERACTIVOS -->
+    <div style="margin-bottom: 40px;">
+        <button class="btn-interact" onclick="toggleHackerMode()">⚡ MODO HACKER</button>
+        <button class="btn-interact" style="border-color: #ffb703; color: #ffb703;" onclick="activarModoRandom()">🎲 MODO RANDOM</button>
+        <button class="btn-interact" style="border-color: #238636; color: #238636;" onclick="activarModoVictoria()">🏆 MODO VICTORIA</button>
+        <button class="btn-interact" style="background-color: #da3633; color: white; border: none;" onclick="activarTodo()">👑 ACTIVAR TODO</button>
+    </div>
+
     <div class="container">
         <!-- INVENTO 1 -->
-        <div class="card">
+        <div class="card" onclick="alertaProyecto('milkilang')">
             <div>
                 <span class="badge">v1.0.0 Stable</span>
                 <h3>🐈 MilkiLang</h3>
@@ -74,7 +144,7 @@
         </div>
 
         <!-- INVENTO 2 -->
-        <div class="card">
+        <div class="card" onclick="alertaProyecto('laser')">
             <div>
                 <span class="badge badge-hardware">Hardware Pico</span>
                 <h3>🔴 Torreta Láser</h3>
@@ -83,7 +153,7 @@
         </div>
 
         <!-- INVENTO 3 -->
-        <div class="card">
+        <div class="card" onclick="alertaProyecto('antwan')">
             <div>
                 <span class="badge">Plugin JAR</span>
                 <h3>🪓 Antwan Mod</h3>
@@ -91,6 +161,15 @@
             </div>
         </div>
     </div>
+
+    <!-- 🌐 CRÉDITOS OFICIALES Y CONTACTO -->
+    <footer>
+        <p>🛠️ Hecho con orgullo en <strong>GitHub Pages</strong> por ErikopterStudios</p>
+        <p>✉️ Contacto de Soporte y Negocios: <a href="mailto:ErikopterStudios@gmail.com">ErikopterStudios@gmail.com</a></p>
+    </footer>
+
+    <!-- 🌐 ENLAZA TU WEB CON TU ARCHIVO CODE.JS -->
+    <script src="code.js"></script>
 
 </body>
 </html>
