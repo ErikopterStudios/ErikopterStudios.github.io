@@ -1,64 +1,46 @@
-/* 🎨 ESTILOS INDEPENDIENTES PARA LA TORRETA LÁSER - BY ERIKOPTERSTUDIOS */
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Torreta Láser | ErikopterStudios</title>
+    
+    <!-- 🌐 ESTA LÍNEA CONECTA TU WEB CON TU ARCHIVO CSS INDEPENDIENTE -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-body { 
-    background-color: #0d1117; 
-    color: #c9d1d9; 
-    font-family: 'Segoe UI', sans-serif; 
-    padding: 40px; 
-    text-align: center; 
-}
+    <div class="box">
+        <h1>🔴 Central Técnica: Torreta Láser (Edición 1 Servo)</h1>
+        <p><strong>Proyecto:</strong> Sistema físico de escaneo horizontal automatizado mediante hardware para el pasillo de casa.</p>
+        
+        <h3>📦 Componentes de la Mesa de Pruebas:</h3>
+        <ul>
+            <li>1x Placa de desarrollo (Microcontrolador físico)</li>
+            <li>1x Servomotor azul SG90 (Eje Horizontal)</li>
+            <li>1x Diodo Láser Rojo de alta intensidad (5V o 3.3V)</li>
+            <li>1x Placa de madera base + Tornillos pequeños de servo</li>
+            <li>Cables de puente (Macho-Hembra / Macho-Macho)</li>
+        </ul>
 
-.box { 
-    background: #161b22; 
-    border: 1px solid #30363d; 
-    padding: 30px; 
-    max-width: 700px; 
-    margin: 0 auto; 
-    border-radius: 10px; 
-    text-align: left; 
-}
+        <h3>🛠️ Guía de Montaje Paso a Paso (Un solo Servo):</h3>
+        <ol class="steps">
+            <li><strong>Montaje del Servo Base:</strong> Coge el único servomotor azul SG90. Colócalo en posición vertical sobre la placa de madera base. Asegúralo firmemente usando los dos tornillos largos que vienen en su bolsa para evitar vibraciones al girar.</li>
+            <li><strong>Instalación Directa del Láser:</strong> Coge la cruceta o brazo de plástico blanco del servo. Pega el diodo láser rojo directamente sobre este brazo de plástico usando pegamento fuerte o una tira de cinta. Asegúrate de darle una ligera inclinación hacia abajo para que el punto apunte al suelo del pasillo al encajar el brazo en el engranaje del motor.</li>
+            <li><strong>Conexión Eléctrica del Servomotor:</strong> El servo tiene 3 cables. Conecta el cable <strong>marrón</strong> al pin <strong>GND</strong> (Tierra) de la placa. Conecta el cable <strong>rojo</strong> al pin de alimentación positiva. Conecta el cable <strong>naranja de señal</strong> al Pin de hardware asignado en tu código para mover el motor a los lados.</li>
+            <li><strong>Conexión Eléctrica del Láser:</strong> Conecta el cable negro (o azul) del diodo láser al pin <strong>GND</strong> de la placa. Conecta el cable rojo del láser al Pin digital configurado para controlar el encendido del haz de luz.</li>
+        </ol>
 
-h1 { color: #58a6ff; text-align: center; }
-h3 { color: #79c0ff; border-bottom: 1px solid #30363d; padding-bottom: 5px; margin-top: 25px; }
+        <h3>💻 Código de Control Integrado:</h3>
+        <pre>// Aquí pegarás el script nativo de tu PC Lenovo que mueve el único servo horizontal</pre>
 
-pre { 
-    background: #000; 
-    color: #ffb703; 
-    padding: 15px; 
-    border-radius: 5px; 
-    overflow-x: auto; 
-    font-family: monospace; 
-}
+        <!-- 🕹️ BOTÓN INTERACTIVO CONECTADO CON SCRIPT.JS -->
+        <button class="btn-action" onclick="testearLaser()">⚡ LANZAR DISPARO DE PRUEBA ONLINE</button>
 
-.steps { padding-left: 20px; }
-.steps li { margin-bottom: 15px; }
+        <center><a href="../" class="back">← Volver a la central de ErikopterStudios</a></center>
+    </div>
 
-.back { 
-    display: inline-block; 
-    margin-top: 20px; 
-    color: #58a6ff; 
-    text-decoration: none; 
-}
+    <!-- 🌐 CONEXIÓN FINAL CON TU ARCHIVO DE SCRIPTS INTERACTIVOS JS -->
+    <script src="script.js"></script>
 
-.back:hover { text-decoration: underline; }
-strong { color: #ffb703; }
-
-/* 📥 BOTÓN DE ACCIÓN INTERACTIVO */
-.btn-action {
-    display: block;
-    background-color: #da3633;
-    color: white;
-    text-align: center;
-    padding: 12px;
-    border-radius: 6px;
-    font-weight: bold;
-    text-decoration: none;
-    margin: 25px 0;
-    cursor: pointer;
-    border: none;
-    transition: background-color 0.2s;
-}
-
-.btn-action:hover {
-    background-color: #f85149;
-}
+</body>
+</html>
