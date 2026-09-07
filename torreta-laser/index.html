@@ -15,13 +15,16 @@
             background: #161b22; 
             border: 1px solid #30363d; 
             padding: 30px; 
-            max-width: 600px; 
+            max-width: 650px; 
             margin: 0 auto; 
             border-radius: 10px; 
             text-align: left; 
         }
         h1 { color: #58a6ff; text-align: center; }
+        h3 { color: #79c0ff; border-bottom: 1px solid #30363d; padding-bottom: 5px; }
         pre { background: #000; color: #ffb703; padding: 15px; border-radius: 5px; overflow-x: auto; font-family: monospace; }
+        .steps { padding-left: 20px; }
+        .steps li { margin-bottom: 10px; }
         .back { display: inline-block; margin-top: 20px; color: #58a6ff; text-decoration: none; }
         .back:hover { text-decoration: underline; }
     </style>
@@ -39,6 +42,14 @@
             <li>1x Diodo Láser Rojo de alta intensidad</li>
             <li>Estructura de montaje sobre madera</li>
         </ul>
+
+        <h3>🛠️ Instrucciones de Montaje:</h3>
+        <ol class="steps">
+            <li><strong>Fijar la Base:</strong> Atornilla o pega el primer servomotor (Eje X - Horizontal) firmemente sobre la base de madera del pasillo.</li>
+            <li><strong>Montar el Eje Vertical:</strong> Acopla el segundo servomotor (Eje Y) sobre el brazo del primer servo utilizando un adaptador de plástico, de forma que pueda moverse hacia arriba y hacia abajo.</li>
+            <li><strong>Colocar el Láser:</strong> Pega el diodo láser rojo en la parte superior del segundo servomotor, apuntando hacia el suelo del pasillo.</li>
+            <li><strong>Conexión de Cables:</strong> Conecta los cables marrones/negros de los servos a GND, los rojos a la salida de corriente positiva, y los cables de señal (amarillos/naranjas) a los pines correspondientes de tu placa.</li>
+        </ol>
 
         <h3>💻 Código de Control Integrado:</h3>
         <pre>// Aquí pegarás el script nativo de tu PC Lenovo que mueve los servos</pre>
