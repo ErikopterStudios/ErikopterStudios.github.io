@@ -25,33 +25,25 @@
             letter-spacing: 1px;
         }
         
-        /* 🕹️ PANEL DE BOTONES PRINCIPALES */
+        /* 🕹️ PANEL DE CONTROL DE TRANSMISIÓN */
         .panel-control {
             margin-bottom: 40px;
         }
-        .btn-interact {
+        .btn-live {
             background-color: #21262d;
-            border: 1px solid #30363d;
-            color: #c9d1d9;
-            padding: 12px 24px;
+            border: 2px solid #da3633;
+            color: #da3633;
+            padding: 14px 28px;
             border-radius: 6px;
             font-weight: bold;
             cursor: pointer;
             text-decoration: none;
             display: inline-block;
-            margin: 5px;
             transition: transform 0.2s, background-color 0.2s;
-        }
-        .btn-interact:hover {
-            transform: scale(1.05);
-            background-color: #30363d;
-        }
-        .btn-live {
-            border-color: #da3633;
-            color: #da3633;
             animation: parpadeo-boton 2s infinite;
         }
         .btn-live:hover {
+            transform: scale(1.05);
             background-color: #da3633;
             color: white;
         }
@@ -109,7 +101,7 @@
 
         @keyframes parpadeo-boton {
             0% { box-shadow: 0 0 0px rgba(218, 54, 51, 0); }
-            50% { box-shadow: 0 0 10px rgba(218, 54, 51, 0.5); }
+            50% { box-shadow: 0 0 15px rgba(218, 54, 51, 0.6); }
             100% { box-shadow: 0 0 0px rgba(218, 54, 51, 0); }
         }
     </style>
@@ -119,14 +111,13 @@
     <h1>ERIKOPTERSTUDIOS 🪓🤖</h1>
     <div class="subtitle">🐾 LABORATORIO DE SOFTWARE Y ROBÓTICA GATUNA 🐾</div>
 
-    <!-- 🕹️ PANEL DE CONTROL CON TU NUEVO BOTÓN DE TRANSMISIÓN -->
+    <!-- 🕹️ PANEL DE TRANSMISIÓN CONECTADO A TU NUEVA CARPETA -->
     <div class="panel-control">
-        <a href="logros" class="btn-interact btn-live">🔴 TRANSMISIÓN EN DIRECTO (LIVE STREAM)</a>
-        <a href="logros" class="btn-interact" style="border-color: #ffb703; color: #ffb703;">📿 VER LOGROS MAKER</a>
+        <a href="transmision" class="btn-live">🔴 TRANSMISIÓN EN DIRECTO (LIVE STREAM)</a>
     </div>
 
     <div class="container">
-        <!-- TARJETA 1 -->
+        <!-- LINK A LA DOCUMENTACIÓN DE MILKILANG -->
         <a href="milkilang" class="card">
             <div>
                 <span class="badge">v1.0.0 Stable</span>
@@ -135,7 +126,7 @@
             </div>
         </a>
 
-        <!-- TARJETA 2 -->
+        <!-- LINK A LA TORRETA LÁSER (SISTEMA INDEPENDIENTE) -->
         <a href="torreta-laser" class="card">
             <div>
                 <span class="badge badge-hardware">Hardware Pico</span>
@@ -144,7 +135,7 @@
             </div>
         </a>
 
-        <!-- TARJETA 3 -->
+        <!-- LINK AL MOD DE ANTWAN -->
         <a href="antwan-mod" class="card">
             <div>
                 <span class="badge">Plugin JAR</span>
